@@ -6,18 +6,15 @@ import { Component } from '@angular/core';
   <h2>
     Welcome {{name}}
   </h2>
-  <h2>{{"2+2"}}</h2>
-  <h2>{{"Welcome " + name}}</h2>
-  <h2>{{name.length}}</h2>
-  <h2>{{name.toUpperCase()}}</h2>
-  <h2>{{greetUser()}}</h2>
-  <h2>{{siteUrl}}</h2>
+  <input [id]="myId" type="text" value="Vishwas">
+  <input id="{{myId}}" bind-disabled="isDisabled" type="text" value="Vishwas">
   `,
   styles: []
 })
 export class TestComponent {
-  public name = "Immanual"
-  public siteUrl = window.location.href;
+  public name = "Immanual";
+  public myId = "testId";
+  public isDisabled = false;
 
   greetUser(){
     return "Hello " + this.name;
